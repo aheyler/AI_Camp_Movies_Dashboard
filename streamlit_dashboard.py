@@ -181,8 +181,8 @@ def create_genre_df():
 genre_df = create_genre_df()
 rows = genre_df.index
 
-# fig = px.bar(genre_df, x=rows, y="number_of_movies", color = rows, title="Distribution of Genres Across the Top 700 Movies")
-# st.plotly_chart(fig)
+fig = px.bar(genre_df, x=rows, y="number_of_movies", color = rows, title="Distribution of Genres Across the Top 700 Movies")
+st.plotly_chart(fig)
 
 fig = px.pie(genre_df, values="number_of_movies", names=rows, title="Distribution of Genres Across the Top 700 Movies")
 st.plotly_chart(fig)
