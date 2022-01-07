@@ -99,12 +99,12 @@ elif rating_options=="Votes":
     # Movie ratings vs Votes
     figRV = px.scatter(movie_df, x="IMDB_Rating", y="No_of_Votes",hover_data=["Series_Title"])
     st.plotly_chart(figRV)
-    st.caption("Most movies that are rated above an 8.5 earn less than 400 million dollars. The correlation between ratings and revenue shows that a movie does not have to be highly rated to earn a high revenue. ")
+    st.caption("The number of votes that a movie received increased as the rating went up. ")
 elif rating_options=="Revenue":
     #movie ratings vs revenue
     figRR = px.scatter(movie_df, x="IMDB_Rating", y="Gross_Rev", hover_data = ["Series_Title"], size ='IMDB_Rating', title= "Rating and Revenue Comparison")
     st.plotly_chart(figRR)
-    st.caption("The number of votes that a movie received increased as the rating went up. ")
+    st.caption("Most movies that are rated above an 8.5 earn less than 400 million dollars. The correlation between ratings and revenue shows that a movie does not have to be highly rated to earn a high revenue. ")
 
 
 # Nathan & Emilio
