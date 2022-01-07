@@ -9,7 +9,7 @@ import statsmodels
 
 st.title("Analyzing Movies")
 st.image("https://s3-us-west-2.amazonaws.com/prd-rteditorial/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg","Source:Rotten Tomatoes")
-st.subheader("The following graphs illustrate the data of movies throughout the ages: ratings, revenue, genres, streaming platform, and directors. ")
+st.caotion("In this dashboard, we investigate movies––their ratings, revenues, genres, streaming platforms, and directors. We were curious to see how these attributes changed over time as well as how they related to one another. The following graphs illustrate our key findings. ")
 mcol1,mcol2,mcol3,mcol4=st.columns(4)
 mcol1.metric("Movies Collected","1000")
 mcol2.metric("Directors Analyzed","401")
@@ -185,7 +185,7 @@ st.plotly_chart(fig)
 fig = px.pie(genre_df, values="number_of_movies", names=rows, title="Distribution of Genres Across the Top 700 Movies")
 st.plotly_chart(fig)
 
-st.caption("Data shown using different visualizations. Both display the number of movies across different genres among the top 700 movies. The drama genre seems to be the most popular", unsafe_allow_html=False)
+st.caption("Data shown using different visualizations. Both display the number of movies across different genres among the top 700 movies. The drama genre seems to be the most popular")
 
 fig = px.scatter(rating_df, x="IMDB_Rating", y="Gross", color="Drama", hover_data = ["Series_Title"])
 st.plotly_chart(fig)
