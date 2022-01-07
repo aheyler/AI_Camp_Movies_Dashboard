@@ -1,21 +1,3 @@
-def install_and_import(package):
-    import importlib
-    try:
-        importlib.import_module(package)
-    except ImportError:
-        import pip
-        pip.main(['install', package])
-    finally:
-        globals()[package] = importlib.import_module(package)
-
-
-install_and_import("pandas")
-install_and_import("numpy")
-install_and_import("plotly")
-install_and_import("statsmodels")
-install_and_import("streamlit")
-
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
