@@ -97,7 +97,7 @@ if rating_options=="Runtime":
     st.caption("The data shows that movies longer than 2 hours have ratings above 8.6, except for '12 Angry Men'. The bulk of the data shows no distinct correlation between movie length and rating, but it can be interpretted that longer movies outliers are rated higher. ")
 elif rating_options=="Votes":
     # Movie ratings vs Votes
-    figRV = px.scatter(movie_df, x="IMDB_Rating", y="No_of_Votes",hover_data=["Series_Title"])
+    figRV = px.scatter(movie_df, x="IMDB_Rating", y="No_of_Votes",hover_data=["Series_Title"], title="IMDB Ratings and Votes")
     st.plotly_chart(figRV)
     st.caption("The number of votes that a movie received increased as the rating went up. ")
 elif rating_options=="Revenue":
