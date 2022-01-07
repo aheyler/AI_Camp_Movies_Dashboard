@@ -11,7 +11,6 @@ def install_and_import(package):
 
 install_and_import("pandas")
 install_and_import("numpy")
-install_and_import("matplotlib")
 install_and_import("plotly")
 install_and_import("statsmodels")
 install_and_import("streamlit")
