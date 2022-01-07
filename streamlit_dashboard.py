@@ -181,8 +181,8 @@ def create_genre_df():
 genre_df = create_genre_df()
 rows = genre_df.index
 
-fig = px.bar(genre_df, x=rows, y="number_of_movies", color = rows, title="Distribution of Genres Across the Top 700 Movies")
-st.plotly_chart(fig)
+# fig = px.bar(genre_df, x=rows, y="number_of_movies", color = rows, title="Distribution of Genres Across the Top 700 Movies")
+# st.plotly_chart(fig)
 
 fig = px.pie(genre_df, values="number_of_movies", names=rows, title="Distribution of Genres Across the Top 700 Movies")
 st.plotly_chart(fig)
@@ -213,9 +213,9 @@ fig = px.bar(platforms_df, x=streams, y="movie amount", color=streams, color_dis
 st.plotly_chart(fig)
 st.caption("The bar graph displays information collected from Netflix, Disney+, Hulu, and Prime Video, which was then organized into a bar graph comparing the amounts of movies on the different streaming services showing that the service with the most movies is Prime Video with 4,113 movies, followed closely by Netflix with 3,695 , which was then followed by Hulu with 1047 movies, while leaving Disney+ as the streaming service with the least movies in total at 922 movies.")
 
-fig = px.pie(platforms_df, values = "movie amount", names=streams, color=streams, color_discrete_map = {"Netflix": 'orangered', "Disney+" : 'mediumblue', "Hulu" : 'lawngreen', "Prime Video": 'lightskyblue'}, title="Number of Movies in Streaming Platforms")
-st.plotly_chart(fig)
-st.caption("The pie chart shows an overview of the amount of movies held by each streaming platform. Prime Video contains the most movies, with Disney+ having the least, as it's a relatively new streaming platform.") 
+# fig = px.pie(platforms_df, values = "movie amount", names=streams, color=streams, color_discrete_map = {"Netflix": 'orangered', "Disney+" : 'mediumblue', "Hulu" : 'lawngreen', "Prime Video": 'lightskyblue'}, title="Number of Movies in Streaming Platforms")
+# st.plotly_chart(fig)
+# st.caption("The pie chart shows an overview of the amount of movies held by each streaming platform. Prime Video contains the most movies, with Disney+ having the least, as it's a relatively new streaming platform.") 
 
 # figure out how to move radio button below graph without having 'define error'
 platform_selected = st.radio("Select a streaming platform:", ["Prime Video", "Disney+", "Hulu", "Netflix"])
