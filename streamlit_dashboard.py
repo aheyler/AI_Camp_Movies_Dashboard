@@ -16,7 +16,6 @@ mcol2.metric("Directors Analyzed","401")
 mcol3.metric("Genres Categorized","6")
 mcol4.metric("Streaming Platforms Sorted","4")
 
-# Aadhavan & Balazs 
 st.header("Movie Directors")
 movie_df = pd.read_csv("imdb_top_1000.csv")
 movie_df.dropna(inplace=True)
@@ -31,7 +30,7 @@ def director_stats_df(movie_df):
     for director in directors:
         director_stats.loc[director,'rating']=movie_df[movie_df.Director==director]['IMDB_Rating'].mean()
         director_stats.loc[director,'Number of Movies Made']=len(movie_df[movie_df.Director==director])
-        director_stats.loc[director,'Average Domestic Revenue']=movie_df[movie_df.Director==director]['Gross_Rev'].mean()
+        director_stats.loc[director,'Avg Domestic Revenue']=movie_df[movie_df.Director==director]['Gross_Rev'].mean()
         director_stats.sort_index(inplace = True) 
     return director_stats
 director_stats=director_stats_df(movie_df)  
@@ -40,7 +39,7 @@ director_stats.rename({'index': 'director'}, axis=1, inplace=True)
 director_stats['rating']=director_stats["rating"].apply(lambda x: int(x))
 figd = px.scatter(director_stats, x='Number of Movies Made', y='Avg Domestic Revenue',
                  hover_data=['director'],size='rating',
-                 title='Which directors were most successful?')
+                 title= 'Directors Avg. Revenue Information')
 figd.update_layout(autosize=False,width=800,height=600,)
 figd.update_layout(legend=dict(
     orientation="h",
@@ -49,8 +48,9 @@ figd.update_layout(legend=dict(
     xanchor="right",
     x=1
 ))
-st.plotly_chart(figd)
+st.plotly_chart(figd,use_container_width=False)
 st.caption("From the data above, it is evident that Steven Spielberg has directed the most movies that are on the top 1000 IMDB List (exlcuding movies with no recorded revenue). The director who has the highest average revenue from movies in the top 1000 is Anthony Russo with a 551.3 million dollar average. The majority of movie directors have made 3 or less films and have an average revenue lower than 500 million. There is no trend of a higher average revenue with more movies. In fact, directors with fewer movies in the top 1000 have a higher average revenue. ")
+
 
 # Year-based graphs
 st.header("Movies Through the Ages")
