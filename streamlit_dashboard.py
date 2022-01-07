@@ -49,7 +49,7 @@ figd.update_layout(legend=dict(
     xanchor="right",
     x=1
 ))
-st.plotly_chart(figd,use_container_width=False)
+st.plotly_chart(figd)
 st.caption("From the data above, it is evident that Steven Spielberg has directed the most movies that are on the top 1000 IMDB List (exlcuding movies with no recorded revenue). The director who has the highest average revenue from movies in the top 1000 is Anthony Russo with a 551.3 million dollar average. The majority of movie directors have made 3 or less films and have an average revenue lower than 500 million. There is no trend of a higher average revenue with more movies. In fact, directors with fewer movies in the top 1000 have a higher average revenue. ")
 
 # Year-based graphs
@@ -231,6 +231,6 @@ elif platform_selected=="Disney+":
 st.header("Key Takeaways")
 st.caption("**Directors:** Looking at directors of top 1000 movies, Steven Spielberg has directed the most movies, while Anthony Russo has the highest average IMDB ratings for his movies. ")
 st.caption("**Trends over time:** Over time, movie durations have grown more similar, and ratings haven't changed significantly.")
-st.caption("**Trends over time:** Over time, movie durations have grown more similar, and ratings haven't changed significantly.")
-st.caption("Takeaways from section #2 - From our data, we were able to see that movies from the drama genre are most popular in the list of the top 700 movies. For the correlation of revenue to IMDB rating, we found that there is no correlation rating and gross income. With this scale of rating, our charts also show that drama movies rank highly most consistently. In the spread of rating, in terms of a movies Meta Score, drama movies had the highest deviation in score, while romance movies were most consistently highly ranked with relatively minimal spread of score. ")
-st.caption("Takeaways from section #3 - In conclusion our data shows that movie streaming services can cater to specific audiences based on their age group like how Disney+ has most of the movies in the all and 7+ category, while Prime Video has most of the movies in the 18+ section. Another note-worthy takeaway is that Rotten Tomatoe ratings do not have any clear correlations to age group.")
+st.caption("**Genres:** From our IMDB data, we were able to see that movies from the drama genre are most popular in the list of the top 700 movies. However, romance has a higher median Meta Score out of the movies in this list, while drama has the highest deviation of scores.")
+st.caption("**Renues & ratings:** For the correlation of revenue to IMDB rating, we found that there is no correlation rating and gross income.")
+st.caption("**Streaming platforms:** In conclusion our data shows that Prime Video hosts the most top movies, followed by Netflix. We also found that movie streaming services can cater to specific audiences based on their age group. For example, Disney+ has most of the movies in the all and 7+ category, while Prime Video has most of the movies in the 18+ section. Another note-worthy takeaway is that Rotten Tomatoe ratings do not have any clear correlations to audience age group.")
