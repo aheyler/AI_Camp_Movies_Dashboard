@@ -16,6 +16,14 @@ mcol2.metric("Directors Analyzed","401")
 mcol3.metric("Genres Categorized","6")
 mcol4.metric("Streaming Platforms Sorted","4")
 
+st.caption("Data Sources:")
+link = '[IMDB Data](https://www.kaggle.com/harshitshankhdhar/imdb-dataset-of-top-1000-movies-and-tv-shows)'
+st.markdown(link, unsafe_allow_html=True)
+link = '[Best-Selling Movies](https://www.kaggle.com/mathurinache/bestsellingmoviesofalltime)'
+st.markdown(link, unsafe_allow_html=True)
+link = '[Movies on Netflix, Prime Video, Hulu and Disney+](https://www.kaggle.com/ruchi798/movies-on-netflix-prime-video-hulu-and-disney)'
+st.markdown(link, unsafe_allow_html=True)
+
 st.header("Movie Directors")
 movie_df = pd.read_csv("imdb_top_1000.csv")
 movie_df.dropna(inplace=True)
