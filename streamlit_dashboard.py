@@ -40,7 +40,7 @@ director_stats.rename({'index': 'director'}, axis=1, inplace=True)
 director_stats['rating']=director_stats["rating"].apply(lambda x: int(x))
 figd = px.scatter(director_stats, x='Number of Movies Made', y='Avg Domestic Revenue',
                  hover_data=['director'],size='rating',
-                 title= 'Which directors were most successful?')
+                 title='Which directors were most successful?')
 figd.update_layout(autosize=False,width=800,height=600,)
 figd.update_layout(legend=dict(
     orientation="h",
