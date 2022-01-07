@@ -102,7 +102,7 @@ elif rating_options=="Votes":
     st.caption("Most movies that are rated above an 8.5 earn less than 400 million dollars. The correlation between ratings and revenue shows that a movie does not have to be highly rated to earn a high revenue. ")
 elif rating_options=="Revenue":
     #movie ratings vs revenue
-    figRR = px.scatter(movie_df, x="IMDB_Rating", y="Gross", hover_data = ["Series_Title"], size ='IMDB_Rating', title= "Rating and Revenue Comparison")
+    figRR = px.scatter(movie_df, x="IMDB_Rating", y="Gross_Rev", hover_data = ["Series_Title"], size ='IMDB_Rating', title= "Rating and Revenue Comparison")
     st.plotly_chart(figRR)
     st.caption("The number of votes that a movie received increased as the rating went up. ")
 
@@ -229,6 +229,8 @@ elif platform_selected=="Disney+":
         
 # CONCLUSION- don't forget to add to this :)
 st.header("Key Takeaways")
-st.caption("Looking at directors of top 1000 movies, Steven Spielberg has directed the most movies, while Anthony Russo has the highest average IMDB ratings for his movies. ")
+st.caption("**Directors:** Looking at directors of top 1000 movies, Steven Spielberg has directed the most movies, while Anthony Russo has the highest average IMDB ratings for his movies. ")
+st.caption("**Trends over time:** Over time, movie durations have grown more similar, and ratings haven't changed significantly.")
+st.caption("**Trends over time:** Over time, movie durations have grown more similar, and ratings haven't changed significantly.")
 st.caption("Takeaways from section #2 - From our data, we were able to see that movies from the drama genre are most popular in the list of the top 700 movies. For the correlation of revenue to IMDB rating, we found that there is no correlation rating and gross income. With this scale of rating, our charts also show that drama movies rank highly most consistently. In the spread of rating, in terms of a movies Meta Score, drama movies had the highest deviation in score, while romance movies were most consistently highly ranked with relatively minimal spread of score. ")
 st.caption("Takeaways from section #3 - In conclusion our data shows that movie streaming services can cater to specific audiences based on their age group like how Disney+ has most of the movies in the all and 7+ category, while Prime Video has most of the movies in the 18+ section. Another note-worthy takeaway is that Rotten Tomatoe ratings do not have any clear correlations to age group.")
