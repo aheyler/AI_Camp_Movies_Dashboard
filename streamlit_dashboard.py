@@ -218,12 +218,14 @@ st.caption("The bar graph displays information collected from Netflix, Disney+, 
 # st.caption("The pie chart shows an overview of the amount of movies held by each streaming platform. Prime Video contains the most movies, with Disney+ having the least, as it's a relatively new streaming platform.") 
 
 # figure out how to move radio button below graph without having 'define error'
-platform_selected = st.radio("Select a streaming platform:", ["Prime Video", "Disney+", "Hulu", "Netflix"])
+mcol1, mcol2 = st.columns(2)
 
-fig = px.scatter(df, x="Age", y="Rotten Tomatoes", 
-                 color = platform_selected,
-                 title = "Which Age Group Has The BEST Movies",
-                 category_orders={"Age": ["7+", "13+", "16+", "18+", "all"]}) 
+with mcol1: 
+    platform_selected = st.radio("Select a streaming platform:", ["Prime Video", "Disney+", "Hulu", "Netflix"])
+
+with mcol2: 
+    fig = px.scatter(df, x="Age", y="Rotten Tomatoes",color = platform_selected, title = "Which Age Group Has The BEST Movies",
+ category_orders={"Age": ["7+", "13+", "16+", "18+", "all"]}) 
 st.plotly_chart(fig)
 st.caption("The graph displays the target age group demographic versus the rotten tomatoes rating. From the graph, it seems that target age group isn't correlated to higher or lower rotten tomato ratings.") 
 
@@ -240,8 +242,8 @@ elif platform_selected=="Disney+":
         
 # CONCLUSION- don't forget to add to this :)
 st.header("Key Takeaways")
-st.caption("**Directors:** Looking at directors of top 1000 movies, Steven Spielberg has directed the most movies, while Anthony Russo has the highest average IMDB ratings for his movies. ")
+st.caption("**Directors:** Looking at directors of top 1000 movies, Steven Spielberg has directed the most movies, while Anthony Russo has the highest average domestic revenue for his movies. ")
 st.caption("**Trends over time:** Over time, movie durations have grown more similar, and ratings haven't changed significantly.")
 st.caption("**Genres:** From our IMDB data, we were able to see that movies from the drama genre are most popular in the list of the top 700 movies. However, romance has a higher median Meta Score out of the movies in this list, while drama has the highest deviation of scores.")
-st.caption("**Renues & ratings:** For the correlation of revenue to IMDB rating, we found that there is no correlation rating and gross income.")
+st.caption("**Revenues & ratings:** For the correlation of revenue to IMDB rating, we found that there is no correlation rating and gross income.")
 st.caption("**Streaming platforms:** In conclusion our data shows that Prime Video hosts the most top movies, followed by Netflix. We also found that movie streaming services can cater to specific audiences based on their age group. For example, Disney+ has most of the movies in the all and 7+ category, while Prime Video has most of the movies in the 18+ section. Another note-worthy takeaway is that Rotten Tomatoe ratings do not have any clear correlations to audience age group.")
