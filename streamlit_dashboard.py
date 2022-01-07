@@ -10,9 +10,12 @@ import statsmodels
 st.title("Analyzing Movies")
 st.image("https://s3-us-west-2.amazonaws.com/prd-rteditorial/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg","Source:Rotten Tomatoes")
 st.caption("In this dashboard, we investigate movies––their ratings, revenues, genres, streaming platforms, and directors. We were curious to see how these attributes changed over time as well as how they relate to one another. The following graphs illustrate our key findings. ")
-mcol1,mcol2,mcol3,mcol4=st.columns(4)
+
+#mcol1, mcol2, mcol3, mcol4 = st.columns(4)
+mcol1, mcol2 = st.columns(2)
 mcol1.metric("Movies Collected","1000")
 mcol2.metric("Directors Analyzed","401")
+mcol3, mcol4 = st.columns(2)
 mcol3.metric("Genres Categorized","6")
 mcol4.metric("Streaming Platforms Sorted","4")
 
